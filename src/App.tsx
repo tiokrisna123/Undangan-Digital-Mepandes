@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { WelcomeCover } from './components/WelcomeCover';
 import { HeroSection } from './components/HeroSection';
 import { QuoteSection } from './components/QuoteSection';
