@@ -33,7 +33,7 @@ export const WelcomeCover: React.FC<WelcomeCoverProps> = ({
         </p>
 
         <h1 className="font-serif text-5xl md:text-7xl mb-2 italic tracking-wide text-white font-normal">
-          Mepandes Dayu Tirta & Dayu Ami 
+          Mepandes Dayu Tirta 
         </h1>
 
         <p className="font-sans text-xs tracking-[0.25em] mb-12 text-primary font-light">
