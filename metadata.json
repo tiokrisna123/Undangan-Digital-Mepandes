@@ -1,0 +1,6 @@
+{
+  "name": "Mepandes Digital Invitation",
+  "description": "Digital invitation for a traditional Balinese Mepandes (tooth filing) Manusa Yadnya ceremony.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
