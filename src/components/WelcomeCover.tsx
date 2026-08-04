@@ -20,7 +20,7 @@ export const WelcomeCover: React.FC<WelcomeCoverProps> = ({
     >
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80&w=1200"
+          src="FOTO AWAL.jpg"
           alt="Mepandes Ceremony Cover"
           className="w-full h-full object-cover"
         />
