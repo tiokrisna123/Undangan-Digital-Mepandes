@@ -15,7 +15,7 @@ export const WelcomeCover: React.FC<WelcomeCoverProps> = ({
     <div
       id="welcome-cover"
       className={`fixed inset-0 flex flex-col items-center justify-center text-center px-6 md:px-8 z-[100] transition-transform duration-1000 cubic-bezier(0.77,0,0.175,1) ${
-        isOpen ? '-translate-y-full pointer-events-none' : 'translate-y-0'
+        isOpen ? '-translate-y-[105%] pointer-events-none' : 'translate-y-0'
       }`}
     >
       <div className="absolute inset-0">
