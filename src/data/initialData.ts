@@ -2,26 +2,19 @@ import { Profile, GalleryItem, Wish } from '../types';
 
 export const PROFILES: Profile[] = [
   {
-    id: 'putu',
-    name: 'Putu',
-    order: 'Anak Pertama',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=600',
-    bio: 'Putra Pertama dari Pasangan I Gede Suarta & Ni Kadek Ratni'
-  },
-  {
-    id: 'made',
-    name: 'Made',
+    id: 'Dayu Tirta',
+    name: 'Ida Ayu Tirta Maheswari Pidada',
     order: 'Anak Kedua',
-    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=600',
-    bio: 'Putra Kedua dari Pasangan I Gede Suarta & Ni Kadek Ratni'
+    image: "/assets/FOTO DETE SENDIRI.jpg",
+    bio: 'Putri Kedua dari Pasangan Ida Bagus Ketut Oka Suteja & Virra Silvana '
   },
   {
-    id: 'nyoman',
-    name: 'Nyoman',
-    order: 'Anak Ketiga',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600',
-    bio: 'Putri Ketiga dari Pasangan I Gede Suarta & Ni Kadek Ratni'
-  }
+    id: 'Dayu Ami ',
+    name: 'Ida Ayu Panondria Laksmidewi Pidada',
+    order: 'Anak Pertama',
+    image: "/assets/FOTO DAMI SENDIRI.jpeg",
+    bio: 'Putri Pertama dari Pasangan Ida Bagus Gede Putra Manuaba & Ida Ayu Widnyani Pidada'
+  },
 ];
 
 export const GALLERY_ITEMS: GalleryItem[] = [

@@ -11,7 +11,7 @@ export const HeroSection: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 5000); // ganti foto setiap 5 detik
+    }, 8000); // ganti foto setiap 5 detik
 
     return () => clearInterval(interval);
   }, []);
@@ -32,7 +32,7 @@ export const HeroSection: React.FC = () => {
             object-cover
             object-center
             transition-opacity
-            duration-[2000ms]
+            duration-[3000ms]
             ease-in-out
             ${
               currentImage === index
@@ -43,9 +43,9 @@ export const HeroSection: React.FC = () => {
         />
       ))}
 
-      <div className="absolute inset-0 flex items-end justify-center pb-20 md:pb-24 bg-gradient-to-t from-white via-white/40 to-black/30">
+      <div className="absolute inset-0 flex items-end justify-center pb-20 md:pb-24 bg-gradient-to-t from-white/100 via-white/0 to-transparent">
         <div className="text-center reveal active px-4">
-          <p className="font-sans text-[10px] md:text-[11px] tracking-[0.4em] text-primary mb-3 uppercase font-semibold">
+          <p className="font-sans text-xs tracking-[0.35em] mb-3 uppercase text-charcoal-200">
             SANG SASKARA
           </p>
 

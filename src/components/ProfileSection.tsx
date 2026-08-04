@@ -11,51 +11,77 @@ export const ProfileSection: React.FC<ProfileSectionProps> = ({
   onSelectImage,
 }) => {
   return (
-    <section className="py-24 px-6 bg-white">
-      <div className="max-w-4xl mx-auto flex flex-col items-center">
-        <p className="font-sans text-[10px] tracking-[0.4em] text-primary mb-3 uppercase font-semibold">
-          PUTRA PUTRI KAMI
+    <section className="bg-white">
+      {/* Header */}
+      <div className="py-24 px-6 text-center">
+        <p className="font-sans text-[10px] tracking-[0.4em] text-primary uppercase font-semibold mb-3">
+          PUTRI KAMI
         </p>
-        <h2 className="font-serif text-2xl md:text-3xl mb-16 tracking-widest uppercase text-charcoal text-center">
+
+        <h2 className="font-serif text-2xl md:text-3xl tracking-widest uppercase text-charcoal">
           Sang Saskara
         </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 w-full max-w-3xl">
-          {profiles.map((person) => (
-            <div
-              key={person.id}
-              className="flex flex-col items-center text-center reveal active group"
-            >
-              <div
-                onClick={() => onSelectImage(person.image, person.name)}
-                className="w-40 h-40 md:w-48 md:h-48 rounded-full border border-primary p-1 mb-6 transition-all duration-500 transform group-hover:scale-105 group-hover:shadow-xl cursor-pointer relative overflow-hidden"
-              >
-                <img
-                  src={person.image}
-                  alt={person.name}
-                  className="w-full h-full object-cover rounded-full"
-                />
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors rounded-full flex items-center justify-center">
-                  <span className="text-xs font-sans text-white bg-black/50 px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
-                    Lihat Foto
-                  </span>
-                </div>
-              </div>
-              <p className="font-serif text-2xl mb-1 text-primary italic font-medium">
-                {person.name}
-              </p>
-              <p className="font-sans text-[10px] tracking-[0.2em] text-gray-400 uppercase font-medium mb-1">
-                {person.order}
-              </p>
-              {person.bio && (
-                <p className="font-sans text-xs text-gray-500 max-w-[200px] mt-2 font-light leading-relaxed">
-                  {person.bio}
-                </p>
-              )}
-            </div>
-          ))}
-        </div>
       </div>
+
+      {/* Profile */}
+      {profiles.map((person) => (
+        <section
+          key={person.id}
+          onClick={() => onSelectImage(person.image, person.name)}
+          className="relative h-screen w-full overflow-hidden cursor-pointer group"
+        >
+          {/* Background Image */}
+          <img
+            src={person.image}
+            alt={person.name}
+            className="
+              absolute
+              inset-0
+              w-full
+              h-full
+              object-cover
+              object-center
+              transition-transform
+              duration-700
+              group-hover:scale-105
+            "
+          />
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/15" />
+
+          {/* Bottom Gradient */}
+          <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-black via-black/70 to-transparent" />
+
+          {/* Text */}
+          <div className="absolute bottom-20 left-0 right-0 px-8 text-center text-white">
+
+            <h3
+              className="font-serif text-4xl md:text-5xl italic leading-tight"
+              style={{
+                textShadow: "0 4px 16px rgba(0,0,0,.9)"
+              }}
+            >
+              {person.name}
+            </h3>
+
+            <p className="mt-4 text-[11px] tracking-[0.45em] uppercase text-primary">
+              {person.order}
+            </p>
+
+            {person.bio && (
+              <p
+                className="mt-6 max-w-md mx-auto text-sm md:text-base leading-8 text-white/90"
+                style={{
+                  textShadow: "0 2px 8px rgba(0,0,0,.8)"
+                }}
+              >
+                {person.bio}
+              </p>
+            )}
+          </div>
+        </section>
+      ))}
     </section>
   );
 };
