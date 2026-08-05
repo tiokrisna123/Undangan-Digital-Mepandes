@@ -3,16 +3,22 @@
 @theme {
   --font-serif: "Playfair Display", serif;
   --font-sans: "Montserrat", sans-serif;
+
   --color-primary: #D0A750;
   --color-charcoal: #111111;
   --color-cream: #F9F6F0;
 }
+
+/* =========================================================
+   Utilities
+========================================================= */
 
 @layer utilities {
   .masonry {
     column-count: 2;
     column-gap: 1rem;
   }
+
   @media (min-width: 768px) {
     .masonry {
       column-count: 3;
@@ -20,26 +26,91 @@
   }
 }
 
-.reveal {
+/* =========================================================
+   Premium Reveal Animation
+========================================================= */
+
+.reveal,
+.image-reveal {
   opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease-out;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Text ---------- */
+
+.reveal {
+  transform: translate3d(0, 70px, 0);
+
+  transition:
+    opacity 0.95s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.95s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .reveal.active {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
 }
 
-/* Custom scrollbar for wishes container */
+/* ---------- Image ---------- */
+
+.image-reveal {
+  transform: scale(1.08);
+
+  transition:
+    opacity 1.3s ease,
+    transform 2s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.image-reveal.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =========================================================
+   Stagger Delay
+========================================================= */
+
+.delay-1 { transition-delay: 120ms; }
+.delay-2 { transition-delay: 240ms; }
+.delay-3 { transition-delay: 360ms; }
+.delay-4 { transition-delay: 480ms; }
+.delay-5 { transition-delay: 600ms; }
+.delay-6 { transition-delay: 720ms; }
+.delay-7 { transition-delay: 840ms; }
+.delay-8 { transition-delay: 960ms; }
+
+/* =========================================================
+   Scrollbar
+========================================================= */
+
 ::-webkit-scrollbar {
   width: 4px;
 }
+
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #d0a750;
-  border-radius: 2px;
+  border-radius: 999px;
 }
 
+::-webkit-scrollbar-thumb:hover {
+  background: #b88f39;
+}
+
+/* =========================================================
+   Accessibility
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .image-reveal {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}

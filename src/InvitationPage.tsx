@@ -20,8 +20,10 @@ import { Wish } from './types';
 export default function InvitationPage() {
   const { slug } = useParams();
   console.log(slug);
+
   const [isOpen, setIsOpen] = useState(false);
   const [guestName, setGuestName] = useState('Tamu Undangan');
+
   const [wishes, setWishes] = useState<Wish[]>(() => {
     try {
       const saved = localStorage.getItem('mepandes_wishes');
@@ -31,104 +33,157 @@ export default function InvitationPage() {
     }
   });
 
-  const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
+  const [lightboxImage, setLightboxImage] = useState<{
+    src: string;
+    alt: string;
+  } | null>(null);
+
   const [isLinkGenOpen, setIsLinkGenOpen] = useState(false);
 
-  // Read guest name from URL parameter ?to=Nama+Tamu
+  // ==========================
+  // Read Guest Name
+  // ==========================
+
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const toParam = params.get('to');
+
     if (toParam && toParam.trim()) {
       setGuestName(toParam.trim());
     }
   }, []);
 
-  // Sync wishes to localStorage
+  // ==========================
+  // Save Wishes
+  // ==========================
+
   useEffect(() => {
     try {
-      localStorage.setItem('mepandes_wishes', JSON.stringify(wishes));
+      localStorage.setItem(
+        'mepandes_wishes',
+        JSON.stringify(wishes)
+      );
     } catch (e) {
-      console.warn('Failed to persist wishes:', e);
+      console.warn(e);
     }
   }, [wishes]);
 
-  // Handle scroll animation reveal
+  // ==========================
+  // Reveal Animation
+  // ==========================
+
   useEffect(() => {
-    const handleScroll = () => {
-      const reveals = document.querySelectorAll('.reveal');
-      reveals.forEach((el) => {
-        const windowHeight = window.innerHeight;
-        const elementTop = el.getBoundingClientRect().top;
-        if (elementTop < windowHeight - 80) {
-          el.classList.add('active');
-        }
-      });
-    };
+    if (!isOpen) return;
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // initial check
+    const reveals = document.querySelectorAll('.reveal, .image-reveal');
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          } else {
+            entry.target.classList.remove("active");
+          }
+        });
+      },
+      { 
+        threshold: 0.15,
+        rootMargin: "0px 0px -10% 0px", 
+      }
+    );
+
+    reveals.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+
   }, [isOpen]);
+
+  // ==========================
+  // Open Invitation
+  // ==========================
 
   const handleOpenInvitation = () => {
     setIsOpen(true);
     document.body.classList.remove('no-scroll');
   };
 
-  const handleAddWish = (newWishData: Omit<Wish, 'id' | 'timestamp'>) => {
+  // ==========================
+  // Add Wish
+  // ==========================
+
+  const handleAddWish = (
+    newWishData: Omit<Wish, 'id' | 'timestamp'>
+  ) => {
     const newWish: Wish = {
       ...newWishData,
       id: Date.now().toString(),
       timestamp: 'Baru saja',
     };
+
     setWishes((prev) => [newWish, ...prev]);
   };
 
   return (
-    
     <div className="min-h-screen bg-white text-charcoal font-sans selection:bg-primary/20 selection:text-primary relative">
-      {/* Locked Cover Screen */}
+
       <WelcomeCover
         guestName={guestName}
         isOpen={isOpen}
         onOpen={handleOpenInvitation}
       />
 
-      {/* Main Content (Revealed after opening) */}
       <main
         className={`transition-opacity duration-1000 ${
-          isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none h-screen overflow-hidden'
+          isOpen
+            ? 'opacity-100'
+            : 'opacity-0 pointer-events-none h-screen overflow-hidden'
         }`}
       >
         <HeroSection />
+
         <QuoteSection />
+
         <ProfileSection
           profiles={PROFILES}
-          onSelectImage={(src, alt) => setLightboxImage({ src, alt })}
+          onSelectImage={(src, alt) =>
+            setLightboxImage({ src, alt })
+          }
         />
+
         <GallerySection
           items={GALLERY_ITEMS}
-          onSelectImage={(src, alt) => setLightboxImage({ src, alt })}
+          onSelectImage={(src, alt) =>
+            setLightboxImage({ src, alt })
+          }
         />
+
         <EventInfoSection />
+
         <MapSection />
+
         <CountdownSection />
-        <RsvpSection wishes={wishes} onAddWish={handleAddWish} />
-        <Footer onOpenLinkGenerator={() => setIsLinkGenOpen(true)} />
+
+        <RsvpSection
+          wishes={wishes}
+          onAddWish={handleAddWish}
+        />
+
+        <Footer
+          onOpenLinkGenerator={() =>
+            setIsLinkGenOpen(true)
+          }
+        />
       </main>
 
-      {/* Background Audio Player */}
       <AudioPlayer autoStart={isOpen} />
 
-      {/* Lightbox Modal */}
       <LightboxModal
         src={lightboxImage?.src || null}
         alt={lightboxImage?.alt || ''}
         onClose={() => setLightboxImage(null)}
       />
 
-      {/* Shareable Link Generator Modal */}
       <LinkGeneratorModal
         isOpen={isLinkGenOpen}
         onClose={() => setIsLinkGenOpen(false)}
