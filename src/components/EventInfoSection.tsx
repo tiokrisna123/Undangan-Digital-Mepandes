@@ -24,7 +24,7 @@ export const EventInfoSection: React.FC = () => {
             <Calendar className="w-5 h-5 text-primary mx-auto mb-3" />
             <p className="font-serif text-2xl mb-1 text-charcoal">M I N G G U</p>
             <p className="font-sans text-[10px] tracking-[0.2em] text-gray-500 uppercase font-medium">
-              27 JULI 2026
+              20 AGUSTUS 2026
             </p>
           </div>
 
