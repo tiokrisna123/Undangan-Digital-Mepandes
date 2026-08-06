@@ -22,16 +22,16 @@ export const EventInfoSection: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-12 items-center mb-16">
           <div className="p-4">
             <Calendar className="w-5 h-5 text-primary mx-auto mb-3" />
-            <p className="font-serif text-2xl mb-1 text-charcoal">M I N G G U</p>
+            <p className="font-serif text-2xl mb-1 text-charcoal">K A M I S</p>
             <p className="font-sans text-[10px] tracking-[0.2em] text-gray-500 uppercase font-medium">
-              27 JULI 2026
+              20 AGUSTUS 2026
             </p>
           </div>
 
           <div className="py-8 md:py-4 border-y md:border-y-0 md:border-x border-gray-100 p-4">
             <Clock className="w-5 h-5 text-primary mx-auto mb-3" />
             <p className="font-serif text-5xl md:text-6xl text-primary leading-none mb-2 font-light">
-              09:00
+              18:00
             </p>
             <p className="font-sans text-[10px] tracking-[0.2em] text-gray-500 uppercase font-medium">
               WITA - SELESAI
@@ -42,7 +42,7 @@ export const EventInfoSection: React.FC = () => {
             <MapPin className="w-5 h-5 text-primary mx-auto mb-3" />
             <p className="font-serif text-2xl mb-1 text-charcoal">JERO DUSAK</p>
             <p className="font-sans text-[10px] tracking-[0.2em] text-gray-500 uppercase font-medium">
-              GIANYAR, BALI
+              DENPASAR, BALI
             </p>
           </div>
         </div>
