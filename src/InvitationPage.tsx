@@ -6,14 +6,14 @@ import { QuoteSection } from './components/QuoteSection';
 import { ProfileSection } from './components/ProfileSection';
 import { GallerySection } from './components/GallerySection';
 import { EventInfoSection } from './components/EventInfoSection';
-import { MapSection } from './components/MapSection';
-import { CountdownSection } from './components/CountdownSection';
 import { RsvpSection } from './components/RsvpSection';
+import { MapSection } from './components/MapSection';
 import { AudioPlayer } from './components/AudioPlayer';
 import { LightboxModal } from './components/LightboxModal';
 import { LinkGeneratorModal } from './components/LinkGeneratorModal';
 import { Footer } from './components/Footer';
 import { supabase } from "./lib/supabase";
+import DigitalGiftSection from "./components/DigitalGiftSection";
 
 import { PROFILES, GALLERY_ITEMS, INITIAL_WISHES } from './data/initialData';
 import { Wish } from './types';
@@ -186,7 +186,7 @@ const handleAddWish = async (
 
         <MapSection />
 
-        <CountdownSection />
+        <DigitalGiftSection />
 
         <RsvpSection
           wishes={wishes}
