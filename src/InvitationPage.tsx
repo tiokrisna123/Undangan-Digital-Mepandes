@@ -13,6 +13,7 @@ import { AudioPlayer } from './components/AudioPlayer';
 import { LightboxModal } from './components/LightboxModal';
 import { LinkGeneratorModal } from './components/LinkGeneratorModal';
 import { Footer } from './components/Footer';
+import { supabase } from "./lib/supabase";
 
 import { PROFILES, GALLERY_ITEMS, INITIAL_WISHES } from './data/initialData';
 import { Wish } from './types';
@@ -24,14 +25,7 @@ export default function InvitationPage() {
   const [isOpen, setIsOpen] = useState(false);
   const [guestName, setGuestName] = useState('Tamu Undangan');
 
-  const [wishes, setWishes] = useState<Wish[]>(() => {
-    try {
-      const saved = localStorage.getItem('mepandes_wishes');
-      return saved ? JSON.parse(saved) : INITIAL_WISHES;
-    } catch {
-      return INITIAL_WISHES;
-    }
-  });
+  const [wishes, setWishes] = useState<Wish[]>([]);
 
   const [lightboxImage, setLightboxImage] = useState<{
     src: string;
@@ -39,6 +33,33 @@ export default function InvitationPage() {
   } | null>(null);
 
   const [isLinkGenOpen, setIsLinkGenOpen] = useState(false);
+
+  // ==========================
+  // loadWishes
+  // ==========================
+  const loadWishes = async () => {
+  const { data, error } = await supabase
+    .from("guestbook")
+    .select("*")
+    .eq("invitation_id", slug)
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    console.error(error);
+    return;
+  }
+
+  const formatted: Wish[] = (data ?? []).map((item: any) => ({
+    id: item.id.toString(),
+    name: item.nama,
+    attendance: item.hadir,
+    guestCount: item.jumlah_tamu,
+    message: item.ucapan,
+    timestamp: new Date(item.created_at).toLocaleString("id-ID"),
+  }));
+
+  setWishes(formatted);
+};
 
   // ==========================
   // Read Guest Name
@@ -53,20 +74,11 @@ export default function InvitationPage() {
     }
   }, []);
 
-  // ==========================
-  // Save Wishes
-  // ==========================
-
-  useEffect(() => {
-    try {
-      localStorage.setItem(
-        'mepandes_wishes',
-        JSON.stringify(wishes)
-      );
-    } catch (e) {
-      console.warn(e);
-    }
-  }, [wishes]);
+ useEffect(() => {
+  if (slug) {
+    loadWishes();
+  }
+}, [slug]);
 
   // ==========================
   // Reveal Animation
@@ -98,6 +110,7 @@ export default function InvitationPage() {
     return () => observer.disconnect();
 
   }, [isOpen]);
+ 
 
   // ==========================
   // Open Invitation
@@ -112,17 +125,28 @@ export default function InvitationPage() {
   // Add Wish
   // ==========================
 
-  const handleAddWish = (
-    newWishData: Omit<Wish, 'id' | 'timestamp'>
-  ) => {
-    const newWish: Wish = {
-      ...newWishData,
-      id: Date.now().toString(),
-      timestamp: 'Baru saja',
-    };
+const handleAddWish = async (
+  newWishData: Omit<Wish, "id" | "timestamp">
+) => {
+  const { error } = await supabase
+    .from("guestbook")
+    .insert([
+      {
+        invitation_id: slug,
+        nama: newWishData.name,
+        hadir: newWishData.attendance,
+        jumlah_tamu: newWishData.guestCount ?? 1,
+        ucapan: newWishData.message,
+      },
+    ]);
 
-    setWishes((prev) => [newWish, ...prev]);
-  };
+  if (error) {
+    console.error(error);
+    return;
+  }
+
+  await loadWishes();
+};
 
   return (
     <div className="min-h-screen bg-white text-charcoal font-sans selection:bg-primary/20 selection:text-primary relative">
