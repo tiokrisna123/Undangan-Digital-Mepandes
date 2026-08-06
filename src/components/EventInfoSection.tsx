@@ -40,7 +40,9 @@ export const EventInfoSection: React.FC = () => {
 
           <div className="p-4">
             <MapPin className="w-5 h-5 text-primary mx-auto mb-3" />
-            <p className="font-serif text-2xl mb-1 text-charcoal">JERO DUSAK</p>
+            <p className="font-serif text-2xl mb-1 text-charcoal">JL. CEKOMARIA NO.31, PEGUYANGAN KANGIN 
+              KEC.DENPASAR UTARA, KOTA DENPASAR, BALI, 80238
+            </p>
             <p className="font-sans text-[10px] tracking-[0.2em] text-gray-500 uppercase font-medium">
               DENPASAR, BALI
             </p>
