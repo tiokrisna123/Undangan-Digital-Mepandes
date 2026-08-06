@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 
 export const HeroSection: React.FC = () => {
   const images = [
-    "assets/FOTO FADE.jpg",
-    "assets/FOTO FADE (1).jpg",
+    "assets/FOTO FADE.webp",
+    "assets/FOTO FADE (1).webp",
   ];
 
   const [currentImage, setCurrentImage] = useState(0);

@@ -5,14 +5,14 @@ export const PROFILES: Profile[] = [
     id: 'Dayu Tirta',
     name: 'Ida Ayu Tirta Maheswari Pidada',
     order: '',
-    image: "/assets/FOTO DETE SENDIRI.jpg",
+    image: "/assets/FOTO DETE SENDIRI.webp",
     bio: 'Putri Kedua dari Pasangan Ida Bagus Ketut Oka Suteja & Virra Silvana '
   },
   {
     id: 'Dayu Ami ',
     name: 'Ida Ayu Panondria Laksmidewi Pidada',
     order: '',
-    image: "/assets/FOTO DAMI SENDIRI.jpeg",
+    image: "/assets/FOTO DAMI SENDIRI.webp",
     bio: 'Putri Pertama dari Pasangan Ida Bagus Gede Putra Manuaba & Ida Ayu Widnyani Pidada'
   },
 ];
@@ -20,73 +20,73 @@ export const PROFILES: Profile[] = [
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 'gal-1',
-    src: "/assets/FOTO OUR GALLERY.jpg",
+    src: "/assets/FOTO OUR GALLERY.webp",
     alt: 'Prosesi Persiapan Upacara',
     caption: 'Ida Ayu Tirta Maheswari Pidada'
   },
   {
     id: 'gal-2',
-    src: "/assets/FOTO OUR GALLERY (1).jpg",
+    src: "/assets/FOTO OUR GALLERY (1).webp",
     alt: 'Busana Adat Bali',
     caption: 'Ida Ayu Tirta Maheswari Pidada'
   },
   {
     id: 'gal-3',
-    src: "/assets/FOTO OUR GALLERY (2).jpeg",
+    src: "/assets/FOTO OUR GALLERY (2).webp",
     alt: 'Doa Suci Kesucian',
     caption: 'Ida Ayu Tirta Maheswari Pidada'
   },
   {
     id: 'gal-4',
-    src: "/assets/FOTO OUR GALLERY (3).jpeg",
+    src: "/assets/FOTO OUR GALLERY (3).webp",
     alt: 'Ritual Mepandes',
     caption: 'Ida Ayu Tirta Maheswari Pidada'
   },
   {
     id: 'gal-5',
-    src: "/assets/FOTO OUR GALLERY (4).jpg",
+    src: "/assets/FOTO OUR GALLERY (4).webp",
     alt: 'Ritual Mepandes',
     caption: 'Ida Ayu Panondria Laksmidewi Pidada'
   },
   {
     id: 'gal-6',
-    src: "/assets/FOTO OUR GALLERY (7).jpg",
+    src: "/assets/FOTO OUR GALLERY (7).webp",
     alt: 'Ritual Mepandes',
     caption: 'Ida Ayu Panondria Laksmidewi Pidada'
   },
   {
     id: 'gal-7',
-    src: "/assets/FOTO OUR GALLERY (5).jpeg",
+    src: "/assets/FOTO OUR GALLERY (5).webp",
     alt: 'Ritual Mepandes',
     caption: 'Ida Ayu Panondria Laksmidewi Pidada'
   },
   {
     id: 'gal-8',
-    src: "/assets/FOTO OUR GALLERY (6).jpeg",
+    src: "/assets/FOTO OUR GALLERY (6).webp",
     alt: 'Ritual Mepandes',
     caption: 'Ida Ayu Panondria Laksmidewi Pidada'
   },
   {
     id: 'gal-9',
-    src: "/assets/FOTO OUR GALLERY (8).jpeg",
+    src: "/assets/FOTO OUR GALLERY (8).webp",
     alt: 'Ritual Mepandes',
     caption: 'Simbol pembersihan Sad Ripu dalam diri'
   },
   {
     id: 'gal-10',
-    src: "/assets/FOTO OUR GALLERY (9).jpeg",
+    src: "/assets/FOTO OUR GALLERY (9).webp",
     alt: 'Ritual Mepandes',
     caption: 'Simbol pembersihan Sad Ripu dalam diri'
   },
   {
     id: 'gal-11',
-    src: "/assets/FOTO OUR GALLERY (10).jpg",
+    src: "/assets/FOTO OUR GALLERY (10).webp",
     alt: 'Ritual Mepandes',
     caption: 'Simbol pembersihan Sad Ripu dalam diri'
   },
   {
     id: 'gal-12',
-    src: "/assets/FOTO OUR GALLERY (11).jpg",
+    src: "/assets/FOTO OUR GALLERY (11).webp",
     alt: 'Ritual Mepandes',
     caption: 'Simbol pembersihan Sad Ripu dalam diri'
   }

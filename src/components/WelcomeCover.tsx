@@ -20,7 +20,7 @@ export const WelcomeCover: React.FC<WelcomeCoverProps> = ({
     >
       <div className="absolute inset-0">
         <img
-          src="/assets/FOTO AWAL.jpg"
+          src="/assets/FOTO AWAL.webp"
           alt="Mepandes Ceremony Cover"
           className="w-full h-full object-cover object-top scale-105 brightness-110"
         />
