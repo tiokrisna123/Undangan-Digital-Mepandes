@@ -45,8 +45,8 @@ export const HeroSection: React.FC = () => {
 
       <div className="absolute inset-0 flex items-end justify-center pb-20 md:pb-24 bg-gradient-to-t from-white/100 via-white/0 to-transparent">
         <div className="text-center reveal active px-4">
-          <p className="font-sans text-xs tracking-[0.35em] mb-3 uppercase text-charcoal-200">
-            SANG SASKARA
+          <p className="font-sans text-sm tracking-[0.35em] mb-3 uppercase text-charcoal-200">
+            MEPANDES
           </p>
 
           <h2 className="font-serif text-3xl md:text-5xl uppercase tracking-wider text-charcoal font-medium">

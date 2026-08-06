@@ -10,7 +10,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ autoStart }) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // High quality traditional Balinese Gamelan ambient audio stream
-  const musicUrl = 'https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=indonesian-gamelan-traditional-112702.mp3';
+  const musicUrl = "/assets/Cakra Buana - Epic Instrumental - Balinese.mp3";
 
   useEffect(() => {
     if (autoStart) {
