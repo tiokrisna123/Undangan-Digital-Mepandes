@@ -44,36 +44,7 @@ export const Footer: React.FC<FooterProps> = ({
             </span>
           </a>
         </div>
-
-        {/* Instagram developer */}
-        <div className="flex justify-center gap-4 flex-wrap mb-8">
-
-          <a
-            href="https://instagram.com/tiokrsna_"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-2 bg-white rounded-full shadow-sm hover:shadow-md transition-all duration-300"
-          >
-            <Instagram className="w-4 h-4 text-[#c8a45c]" />
-            <span className="text-sm text-gray-700">
-              @tiokrsna_
-            </span>
-          </a>
-
-          <a
-            href="https://instagram.com/tegarsnda"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-2 bg-white rounded-full shadow-sm hover:shadow-md transition-all duration-300"
-          >
-            <Instagram className="w-4 h-4 text-[#c8a45c]" />
-            <span className="text-sm text-gray-700">
-              @tegarsnda
-            </span>
-          </a>
-
-        </div>
-
+        
         {/* Copyright */}
         <p className="text-[10px] tracking-[0.3em] uppercase text-gray-400">
           © 2026 Mepandes Ceremony
