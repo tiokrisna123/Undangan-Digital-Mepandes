@@ -13,7 +13,7 @@ export const PROFILES: Profile[] = [
     name: 'Ida Ayu Panondria Laksmidewi Pidada',
     order: 'Putri Pertama dari Pasangan',
     image: "/assets/FOTO DAMI SENDIRI.webp",
-    bio: 'Ida Bagus Gede Putra Manuaba & Ida Ayu Widnyani Pidada'
+    bio: 'Ida Bagus Gede Putra Manuaba &<br />Ida Ayu Widnyani Pidada'
   },
 ];
 
