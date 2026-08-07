@@ -48,8 +48,8 @@ const DigitalGiftSection: React.FC = () => {
           <p className="text-gray-500 mb-10 leading-relaxed">
             Doa restu Anda merupakan hadiah terindah bagi kami.
             <br />
-            Namun apabila ingin memberikan tanda kasih,
-            dapat melalui rekening berikut.
+            Bagi keluarga dan sahabat yang ingin mengirimkan 
+            hadiah / kado secara cashless, silahkan mengirimkan melalui :
           </p>
 
           <div className="space-y-8">
