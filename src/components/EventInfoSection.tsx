@@ -7,7 +7,7 @@ export const EventInfoSection: React.FC = () => {
   const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Upacara+Mepandes+(Manusa+Yadnya)&dates=20260727T010000Z/20260727T060000Z&details=Upacara+Mepandes+(Potong+Gigi)+Manusa+Yadnya&location=Jero+Dusak,+Gianyar,+Bali`;
 
   const handleCopyLocation = () => {
-    navigator.clipboard.writeText('Jero Dusak, Gianyar, Bali');
+    navigator.clipboard.writeText('Cekomaria, Denpasar, Bali');
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
@@ -15,7 +15,7 @@ export const EventInfoSection: React.FC = () => {
   return (
     <section className="py-24 px-6 bg-white border-b border-gray-100">
       <div className="max-w-4xl mx-auto text-center reveal active">
-        <p className="font-sans text-[10px] tracking-[0.4em] text-primary mb-12 uppercase font-semibold">
+        <p className="font-sans text-sm tracking-[0.4em] text-primary mb-12 uppercase font-semibold">
           WAKTU &amp; TEMPAT
         </p>
 
