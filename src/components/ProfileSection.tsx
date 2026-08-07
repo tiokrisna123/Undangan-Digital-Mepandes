@@ -79,7 +79,7 @@ export const ProfileSection: React.FC<ProfileSectionProps> = ({
 
             {person.bio && (
               <p
-                className="mt-6 max-w-md mx-auto text-sm md:text-base leading-8 text-white/90 reveal delay-3"
+                className="mt-6 max-w-md mx-auto text-sm md:text-base leading-8 text-white/90 reveal delay-3 whitespace-pre-line"
                 style={{
                   textShadow: "0 2px 8px rgba(0,0,0,.8)"
                 }}
