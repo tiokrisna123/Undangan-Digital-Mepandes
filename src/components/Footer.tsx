@@ -9,71 +9,74 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenLinkGenerator,
 }) => {
   return (
-    <footer className="py-16 px-6 text-center bg-[#faf7f2] border-t border-gray-200">
-      <div className="max-w-md mx-auto">
+    <footer className="py-16 px-6 bg-[#faf7f2] border-t border-gray-200">
+      <div className="max-w-md mx-auto text-center">
 
         {/* Tombol Bagikan */}
         <button
           onClick={onOpenLinkGenerator}
-          className="mb-12 px-6 py-3 border border-[#c8a45c] text-[#c8a45c] text-[11px] tracking-[0.3em] uppercase rounded-full hover:bg-[#c8a45c] hover:text-white transition-all duration-300 flex items-center gap-2 mx-auto"
+          className="mb-12 mx-auto flex items-center gap-2 px-6 py-3 border border-[#c8a45c] rounded-full text-[#c8a45c] text-[11px] tracking-[0.3em] uppercase hover:bg-[#c8a45c] hover:text-white transition-all duration-300"
         >
           <Share2 className="w-4 h-4" />
           Bagikan Undangan
         </button>
 
-        {/* Watermark */}
-        <h3 className="text-sm tracking-[0.45em] uppercase text-[#c8a45c] font-semibold mb-2">
+        {/* Brand */}
+        <h2 className="text-sm font-semibold tracking-[0.5em] uppercase text-[#c8a45c] mb-2">
           MAITEKA
-        </h3>
+        </h2>
 
         <p className="text-xs text-gray-500 italic mb-8">
-          Crafted with ❤️ by MaiTeka Studio
+          Designed &amp; Developed by MaiTeka.id
         </p>
 
-        {/* Instagram */}
-        <div className="flex justify-center gap-4 mb-8 flex-wrap">
-
+        {/* Instagram utama */}
+        <div className="flex justify-center mb-4">
           <a
             href="https://instagram.com/maiteka.id"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm hover:shadow-md transition-all"
+            className="flex items-center gap-2 px-5 py-2 bg-white rounded-full shadow-sm hover:shadow-md transition-all duration-300"
           >
             <Instagram className="w-4 h-4 text-[#c8a45c]" />
-            <span className="text-sm font-medium">
+            <span className="text-sm font-medium text-gray-700">
               @maiteka.id
             </span>
           </a>
+        </div>
+
+        {/* Instagram developer */}
+        <div className="flex justify-center gap-4 flex-wrap mb-8">
 
           <a
-            href="https://instagram.com/username_kamu"
+            href="https://instagram.com/tiokrsna_"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm hover:shadow-md transition-all"
+            className="flex items-center gap-2 px-5 py-2 bg-white rounded-full shadow-sm hover:shadow-md transition-all duration-300"
           >
             <Instagram className="w-4 h-4 text-[#c8a45c]" />
-            <span className="text-sm">
-              @username_kamu
+            <span className="text-sm text-gray-700">
+              @tiokrsna_
             </span>
           </a>
 
           <a
-            href="https://instagram.com/username_teman"
+            href="https://instagram.com/tegarsnda"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm hover:shadow-md transition-all"
+            className="flex items-center gap-2 px-5 py-2 bg-white rounded-full shadow-sm hover:shadow-md transition-all duration-300"
           >
             <Instagram className="w-4 h-4 text-[#c8a45c]" />
-            <span className="text-sm">
-              @username_teman
+            <span className="text-sm text-gray-700">
+              @tegarsnda
             </span>
           </a>
 
         </div>
 
         {/* Copyright */}
-        <p className="text-[11px] tracking-[0.2em] text-gray-400">
-          © 2026 MEPANDES CEREMONY
+        <p className="text-[10px] tracking-[0.3em] uppercase text-gray-400">
+          © 2026 Mepandes Ceremony
         </p>
 
       </div>
