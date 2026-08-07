@@ -57,7 +57,7 @@ export const ProfileSection: React.FC<ProfileSectionProps> = ({
           <div className="absolute inset-0 bg-black/15" />
 
           {/* Bottom Gradient */}
-          <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-black via-black/70 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-[65%] bg-gradient-to-t from-black/80 via-black/70 to-transparent" />
 
           {/* Text */}
           <div className="absolute bottom-20 left-0 right-0 px-8 text-center text-white">
@@ -72,7 +72,8 @@ export const ProfileSection: React.FC<ProfileSectionProps> = ({
             </h3>
 
             <p
-              className="mt-4 text-[11px] tracking-[0.45em] uppercase text-primary reveal delay-2"
+              className="mt-4 text-[11px] tracking-[0.45em] uppercase text-white reveal delay-2"
+              style={{ textShadow: "0 2px 8px rgba(0,0,0,0.9)" }}
             >
               {person.order}
             </p>
