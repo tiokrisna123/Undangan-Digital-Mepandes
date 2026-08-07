@@ -12,7 +12,7 @@ export const PROFILES: Profile[] = [
     id: 'Dayu Ami ',
     name: 'Ida Ayu Panondria Laksmidewi Pidada',
     order: 'Putri Pertama dari Pasangan',
-    image: "/assets/FOTO DAMI SENDIRI (NEW).webp",
+    image: "/assets/FOTO SENDIRI DAMI (NEW).webp",
     bio: 'Ida Bagus Gede Putra Manuaba &\n Ida Ayu Widnyani Pidada'
   },
 ];
@@ -74,7 +74,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: 'gal-10',
-    src: "/assets/FOTO FADE & OUR GALLERY (1).webp",
+    src: "/assets/FOTO FADE & OUR GALLERY (NEW) (1).webp",
     alt: 'Ritual Mepandes',
     caption: '.'
   },
