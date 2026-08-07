@@ -12,7 +12,7 @@ export const PROFILES: Profile[] = [
     id: 'Dayu Ami ',
     name: 'Ida Ayu Panondria Laksmidewi Pidada',
     order: 'Putri Pertama dari Pasangan',
-    image: "/assets/FOTO DAMI SENDIRI.webp",
+    image: "/assets/FOTO DAMI SENDIRI (NEW).webp",
     bio: 'Ida Bagus Gede Putra Manuaba &\n Ida Ayu Widnyani Pidada'
   },
 ];
@@ -44,7 +44,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: 'gal-5',
-    src: "/assets/FOTO OUR GALLERY (4).webp",
+    src: "/assets/FOTO SENDIRI DAMI (NEW).webp",
     alt: 'Ritual Mepandes',
     caption: 'Ida Ayu Panondria Laksmidewi Pidada'
   },
@@ -68,13 +68,13 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: 'gal-9',
-    src: "/assets/FOTO OUR GALLERY (8).webp",
+    src: "/assets/FOTO FADE & OUR GALLERY (NEW).webp",
     alt: 'Ritual Mepandes',
     caption: '.'
   },
   {
     id: 'gal-10',
-    src: "/assets/FOTO OUR GALLERY (9).webp",
+    src: "/assets/FOTO FADE & OUR GALLERY (1).webp",
     alt: 'Ritual Mepandes',
     caption: '.'
   },
@@ -86,7 +86,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: 'gal-12',
-    src: "/assets/FOTO OUR GALLERY (11).webp",
+    src: "/assets/FOTO OUR GALLERY (NEW).webp",
     alt: 'Ritual Mepandes',
     caption: '.'
   }

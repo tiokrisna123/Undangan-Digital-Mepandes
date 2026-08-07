@@ -20,7 +20,7 @@ export const WelcomeCover: React.FC<WelcomeCoverProps> = ({
     >
       <div className="absolute inset-0">
         <img
-          src="/assets/FOTO AWAL.webp"
+          src="/assets/FOTO AWAL & OUR GALLERY (NEW).webp"
           alt="Mepandes Ceremony Cover"
           className="w-full h-full object-cover object-top scale-105 brightness-110"
         />
@@ -45,7 +45,9 @@ export const WelcomeCover: React.FC<WelcomeCoverProps> = ({
           <h2 className="font-serif text-4xl md:text-6xl italic leading-none text-white mt-1"
             style={{  textShadow: "0 8px 20px rgba(0,0,0,1)" }}
           >
-            Dayu Tirta & Dayu Ami
+            Dayu Tirta & 
+            <br />
+            Dayu Ami
           </h2>
 
         <div className="flex items-center justify-center gap-4 mt-0">
