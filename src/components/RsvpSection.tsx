@@ -40,7 +40,7 @@ export const RsvpSection: React.FC<RsvpSectionProps> = ({
   };
 
   return (
-    <section className="bg-cream py-24 px-6 border-b border-gray-100">
+    <section className="bg-cream py-12 px-6 border-b border-gray-100">
       <div className="max-w-xl mx-auto text-center">
         <div className="reveal active mb-16">
           <h2 className="font-serif text-3xl md:text-4xl italic mb-4 text-charcoal">
