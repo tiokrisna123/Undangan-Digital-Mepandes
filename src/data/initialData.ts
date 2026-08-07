@@ -70,25 +70,25 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: 'gal-9',
     src: "/assets/FOTO OUR GALLERY (8).webp",
     alt: 'Ritual Mepandes',
-    caption: 'Simbol pembersihan Sad Ripu dalam diri'
+    caption: '.'
   },
   {
     id: 'gal-10',
     src: "/assets/FOTO OUR GALLERY (9).webp",
     alt: 'Ritual Mepandes',
-    caption: 'Simbol pembersihan Sad Ripu dalam diri'
+    caption: '.'
   },
   {
     id: 'gal-11',
     src: "/assets/FOTO OUR GALLERY (10).webp",
     alt: 'Ritual Mepandes',
-    caption: 'Simbol pembersihan Sad Ripu dalam diri'
+    caption: '.'
   },
   {
     id: 'gal-12',
     src: "/assets/FOTO OUR GALLERY (11).webp",
     alt: 'Ritual Mepandes',
-    caption: 'Simbol pembersihan Sad Ripu dalam diri'
+    caption: '.'
   }
 ];
 

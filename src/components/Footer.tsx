@@ -12,14 +12,15 @@ export const Footer: React.FC<FooterProps> = ({
     <footer className="py-16 px-6 bg-[#faf7f2] border-t border-gray-200">
       <div className="max-w-md mx-auto text-center">
 
-        {/* Tombol Bagikan */}
-        <button
+        {/*
+          <button
           onClick={onOpenLinkGenerator}
           className="mb-12 mx-auto flex items-center gap-2 px-6 py-3 border border-[#c8a45c] rounded-full text-[#c8a45c] text-[11px] tracking-[0.3em] uppercase hover:bg-[#c8a45c] hover:text-white transition-all duration-300"
         >
           <Share2 className="w-4 h-4" />
           Bagikan Undangan
         </button>
+        */} 
 
         {/* Brand */}
         <h2 className="text-sm font-semibold tracking-[0.5em] uppercase text-[#c8a45c] mb-2">
