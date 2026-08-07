@@ -4,16 +4,16 @@ export const PROFILES: Profile[] = [
   {
     id: 'Dayu Tirta',
     name: 'Ida Ayu Tirta Maheswari Pidada',
-    order: '',
+    order: 'Putri Kedua dari Pasangan',
     image: "/assets/FOTO DETE SENDIRI.webp",
-    bio: 'Putri Kedua dari Pasangan Ida Bagus Ketut Oka Suteja & Virra Silvana '
+    bio: 'Ida Bagus Ketut Oka Suteja & Virra Silvana'
   },
   {
     id: 'Dayu Ami ',
     name: 'Ida Ayu Panondria Laksmidewi Pidada',
-    order: '',
+    order: 'Putri Pertama dari Pasangan',
     image: "/assets/FOTO DAMI SENDIRI.webp",
-    bio: 'Putri Pertama dari Pasangan Ida Bagus Gede Putra Manuaba & Ida Ayu Widnyani Pidada'
+    bio: 'Ida Bagus Gede Putra Manuaba & Ida Ayu Widnyani Pidada'
   },
 ];
 
