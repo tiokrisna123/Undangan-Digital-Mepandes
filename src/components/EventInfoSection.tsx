@@ -7,7 +7,7 @@ export const EventInfoSection: React.FC = () => {
   const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Upacara+Mepandes+(Manusa+Yadnya)&dates=20260727T010000Z/20260727T060000Z&details=Upacara+Mepandes+(Potong+Gigi)+Manusa+Yadnya&location=Jero+Dusak,+Gianyar,+Bali`;
 
   const handleCopyLocation = () => {
-    navigator.clipboard.writeText('Cekomaria, Denpasar, Bali');
+    navigator.clipboard.writeText('JL. CEKOMARIA NO.31, PEGUYANGAN KANGIN KEC.DENPASAR UTARA, KOTA DENPASAR, BALI, 80238');
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
