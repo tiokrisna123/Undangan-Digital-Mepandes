@@ -147,7 +147,7 @@ export const RsvpSection: React.FC<RsvpSectionProps> = ({
               Ucapan Tamu ({wishes.length})
             </h3>
             <span className="text-[10px] font-sans text-gray-400">
-              {wishes.filter((w) => w.attendance === 'hadir').length} Akam Hadir
+              {wishes.filter((w) => w.attendance === 'hadir').length} Akan Hadir
             </span>
           </div>
 
