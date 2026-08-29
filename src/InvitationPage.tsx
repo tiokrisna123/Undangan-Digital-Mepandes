@@ -15,12 +15,46 @@ import { Footer } from './components/Footer';
 import { supabase } from "./lib/supabase";
 import DigitalGiftSection from "./components/DigitalGiftSection";
 
-import { PROFILES, GALLERY_ITEMS, INITIAL_WISHES } from './data/initialData';
+import { WelcomeCover as DeyaWelcomeCover } from './components/deya/WelcomeCover';
+import { HeroSection as DeyaHeroSection } from './components/deya/HeroSection';
+import { QuoteSection as DeyaQuoteSection } from './components/deya/QuoteSection';
+import { ProfileSection as DeyaProfileSection } from './components/deya/ProfileSection';
+import { GallerySection as DeyaGallerySection } from './components/deya/GallerySection';
+import { EventInfoSection as DeyaEventInfoSection } from './components/deya/EventInfoSection';
+import { RsvpSection as DeyaRsvpSection } from './components/deya/RsvpSection';
+import { MapSection as DeyaMapSection } from './components/deya/MapSection';
+import { AudioPlayer as DeyaAudioPlayer } from './components/deya/AudioPlayer';
+import { LightboxModal as DeyaLightboxModal } from './components/deya/LightboxModal';
+import { LinkGeneratorModal as DeyaLinkGeneratorModal } from './components/deya/LinkGeneratorModal';
+import { Footer as DeyaFooter } from './components/deya/Footer';
+import { DigitalGiftSection as DeyaDigitalGiftSection } from './components/deya/DigitalGiftSection';
+
+import {
+  PROFILES as TIRTA_PROFILES,
+  GALLERY_ITEMS as TIRTA_GALLERY_ITEMS,
+} from './data/initialData';
+
+import {
+  PROFILES as DEYA_PROFILES,
+  GALLERY_ITEMS as DEYA_GALLERY_ITEMS,
+  DIGITAL_ACCOUNTS as DEYA_DIGITAL_ACCOUNTS,
+} from './data/deyaData';
+
 import { Wish } from './types';
 
 export default function InvitationPage() {
   const { slug } = useParams();
-  console.log(slug);
+
+  const isDeya = slug === 'mepandes-alya-dan-deya';
+
+  const PROFILES = isDeya ? DEYA_PROFILES : TIRTA_PROFILES;
+
+  const GALLERY_ITEMS = isDeya
+    ? DEYA_GALLERY_ITEMS
+    : TIRTA_GALLERY_ITEMS;
+
+  console.log('slug:', slug);
+  console.log('isDeya:', isDeya);
 
   const [isOpen, setIsOpen] = useState(false);
   const [guestName, setGuestName] = useState('Tamu Undangan');
@@ -148,10 +182,24 @@ const handleAddWish = async (
   await loadWishes();
 };
 
+  const CoverComponent = isDeya ? DeyaWelcomeCover : WelcomeCover;
+  const HeroComponent = isDeya ? DeyaHeroSection : HeroSection;
+  const QuoteComponent = isDeya ? DeyaQuoteSection : QuoteSection;
+  const ProfileComponent = isDeya ? DeyaProfileSection : ProfileSection;
+  const GalleryComponent = isDeya ? DeyaGallerySection : GallerySection;
+  const EventInfoComponent = isDeya ? DeyaEventInfoSection : EventInfoSection;
+  const MapComponent = isDeya ? DeyaMapSection : MapSection;
+  const RsvpComponent = isDeya ? DeyaRsvpSection : RsvpSection;
+  const FooterComponent = isDeya ? DeyaFooter : Footer;
+  const AudioComponent = isDeya ? DeyaAudioPlayer : AudioPlayer;
+  const LightboxComponent = isDeya ? DeyaLightboxModal : LightboxModal;
+  const LinkGeneratorComponent = isDeya
+    ? DeyaLinkGeneratorModal
+    : LinkGeneratorModal;
+
   return (
     <div className="min-h-screen bg-white text-charcoal font-sans selection:bg-primary/20 selection:text-primary relative">
-
-      <WelcomeCover
+      <CoverComponent
         guestName={guestName}
         isOpen={isOpen}
         onOpen={handleOpenInvitation}
@@ -164,51 +212,49 @@ const handleAddWish = async (
             : 'opacity-0 pointer-events-none h-screen overflow-hidden'
         }`}
       >
-        <HeroSection />
+        <HeroComponent />
 
-        <QuoteSection />
+        <QuoteComponent />
 
-        <ProfileSection
+        <ProfileComponent
           profiles={PROFILES}
-          onSelectImage={(src, alt) =>
-            setLightboxImage({ src, alt })
-          }
+          onSelectImage={(src, alt) => setLightboxImage({ src, alt })}
         />
 
-        <GallerySection
+        <GalleryComponent
           items={GALLERY_ITEMS}
-          onSelectImage={(src, alt) =>
-            setLightboxImage({ src, alt })
-          }
+          onSelectImage={(src, alt) => setLightboxImage({ src, alt })}
         />
 
-        <EventInfoSection />
+        <EventInfoComponent />
 
-        <MapSection />
+        <MapComponent />
 
-        <DigitalGiftSection />
+        {isDeya ? (
+          <DeyaDigitalGiftSection accounts={DEYA_DIGITAL_ACCOUNTS} />
+        ) : (
+          <DigitalGiftSection />
+        )}
 
-        <RsvpSection
+        <RsvpComponent
           wishes={wishes}
           onAddWish={handleAddWish}
         />
 
-        <Footer
-          onOpenLinkGenerator={() =>
-            setIsLinkGenOpen(true)
-          }
+        <FooterComponent
+          onOpenLinkGenerator={() => setIsLinkGenOpen(true)}
         />
       </main>
 
-      <AudioPlayer autoStart={isOpen} />
+      <AudioComponent autoStart={isOpen} />
 
-      <LightboxModal
+      <LightboxComponent
         src={lightboxImage?.src || null}
         alt={lightboxImage?.alt || ''}
         onClose={() => setLightboxImage(null)}
       />
 
-      <LinkGeneratorModal
+      <LinkGeneratorComponent
         isOpen={isLinkGenOpen}
         onClose={() => setIsLinkGenOpen(false)}
         currentGuest={guestName}
