@@ -99,7 +99,7 @@ const DigitalGiftSection: React.FC = () => {
               </p>
 
               <h3 className="text-2xl font-bold my-3 tracking-widest">
-                1911001476
+                911001476
               </h3>
 
               <p className="mb-6">
@@ -107,7 +107,7 @@ const DigitalGiftSection: React.FC = () => {
               </p>
 
               <button
-                onClick={() => copyRekening("1911001476")}
+                onClick={() => copyRekening("911001476")}
                 className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg hover:opacity-90 transition"
               >
                 <Copy size={18} />
