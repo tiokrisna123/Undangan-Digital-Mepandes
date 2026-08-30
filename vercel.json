@@ -1,6 +1,10 @@
 {
   "routes": [
     {
+      "src": "/mepandes-alya-dan-deya(.*)",
+      "dest": "https://maiteka1.vercel.app/mepandes-alya-dan-deya$1"
+    },
+    {
       "handle": "filesystem"
     },
     {
