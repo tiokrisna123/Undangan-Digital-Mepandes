@@ -2,20 +2,12 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
-      "source": "/mepandes-alya-dan-deya/assets/:path*",
-      "destination": "https://maiteka1.vercel.app/mepandes-alya-dan-deya/assets/:path*"
-    },
-    {
       "source": "/mepandes-alya-dan-deya",
       "destination": "https://maiteka1.vercel.app/mepandes-alya-dan-deya"
     },
     {
       "source": "/mepandes-alya-dan-deya/:path*",
       "destination": "https://maiteka1.vercel.app/mepandes-alya-dan-deya/:path*"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
     }
   ]
 }
