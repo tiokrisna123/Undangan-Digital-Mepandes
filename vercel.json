@@ -1,15 +1,17 @@
 {
-  "routes": [
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
     {
-      "src": "/mepandes-alya-dan-deya(.*)",
-      "dest": "https://maiteka1.vercel.app/mepandes-alya-dan-deya$1"
+      "source": "/mepandes-alya-dan-deya",
+      "destination": "https://maiteka1.vercel.app/mepandes-alya-dan-deya"
     },
     {
-      "handle": "filesystem"
+      "source": "/mepandes-alya-dan-deya/:path*",
+      "destination": "https://maiteka1.vercel.app/mepandes-alya-dan-deya/:path*"
     },
     {
-      "src": "/.*",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
